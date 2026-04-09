@@ -9,6 +9,19 @@ public class TreeUseCase {
 			printTree(child);
 		}
 	}
+	
+	public static void printTreeBetter(TreeNode<Integer> root) {
+		System.out.print(root.data + ": ");
+		for(int i = 0; i < root.children.size(); i++) {
+			System.out.print(root.children.get(i).data + " ");
+		}
+		System.out.println();
+		
+		for(int i = 0; i < root.children.size(); i++) {
+			TreeNode<Integer> child = root.children.get(i);
+			printTreeBetter(child);
+		}
+	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -26,7 +39,7 @@ public class TreeUseCase {
 		child2.children.add(child4);
 		child2.children.add(child5);
 		
-		printTree(root);
+		printTreeBetter(root);
 		
 	
 		
